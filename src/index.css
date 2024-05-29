@@ -1,0 +1,302 @@
+/* rubik-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./fonts/rubik-v28-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* rubik-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/rubik-v28-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* rubik-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Rubik";
+  font-style: italic;
+  font-weight: 400;
+  src: url("./fonts/rubik-v28-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* rubik-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/rubik-v28-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* custom css */
+:root {
+  --purple-color: #a729f5;
+  --dark-navy-color: #313e51;
+  --navy-color: #3b4d66;
+  --gray-navy-color: #626c7f;
+  --light-bluish-color: #abc1e1;
+  --light-grey-color: #f4f6fa;
+  --prue-white-color: #ffffff;
+  --green-color: #26d782;
+  --red-color: #ee5454;
+  --main-font-family: "Rubik", Arial, Helvetica, sans-serif;
+
+  --body-bg-image: url("./assets/pattern-background-desktop-light.svg");
+
+  --sun-icon: url("./assets/icon-moon-dark.svg");
+  --moon-icon: url("./assets/icon-sun-dark.svg");
+}
+
+.dark-mode {
+  --light-grey-color: #313e51;
+  --dark-naviy-color: #ffffff;
+  --gray-navy-color: #abc1e1;
+  --dark-navy-color: #ffffff;
+  --sun-icon: url("./assets/icon-moon-light.svg");
+  --moon-icon: url("./assets/icon-sun-light.svg");
+  --body-bg-image: url("./assets/pattern-background-desktop-dark.svg");
+  --prue-white-color: #3b4d66;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 2px dotted var(--purple-color);
+  outline-offset: 3px;
+}
+
+img {
+  display: flex;
+  object-fit: cover;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--main-font-family);
+  font-weight: 500;
+  background-image: var(--body-bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--light-grey-color);
+  color: var(--dark-navy-color);
+  transition: 0.3s;
+}
+
+.big-text {
+  font-weight: 500;
+  font-size: 144px;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+p {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.btn {
+  border: 0;
+  background-color: var(--purple-color);
+  color: var(--prue-white-color);
+  border-radius: 24px;
+  padding: 32px 0;
+  font-size: 28px;
+  line-height: 1;
+  transition: 0.3s;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.btn:hover {
+  background-color: rgba(167, 41, 245, 0.5);
+}
+
+/* HEADER START */
+.header {
+  padding-top: 83px;
+  margin-bottom: 85px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-logo figure {
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #f6e7ff;
+  width: 56px;
+  height: 56px;
+  display: flex;
+}
+
+.header-logo span {
+  font-size: 28px;
+  line-height: 1;
+  color: var(--dark-navy-color);
+}
+
+.dark-btn {
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.dark-btn::before,
+.dark-btn::after {
+  display: inline-block;
+  content: "";
+  height: 24px;
+  width: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.dark-btn::after {
+  background-image: var(--sun-icon);
+}
+
+.dark-btn::before {
+  background-image: var(--moon-icon);
+}
+
+header input {
+  display: none;
+}
+
+.dark-btn > span {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 999px;
+  background-color: var(--purple-color);
+}
+
+.dark-btn > span span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+.dark-btn > span span:last-child {
+  visibility: hidden;
+}
+.dark-btn > span span:first-child {
+  transition: transform 0.3s ease;
+}
+
+header input:checked + span span:first-child {
+  transform: translateX(100%);
+}
+
+/* HEADER FOOTER */
+
+/* RESPONSIVE PART */
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding-top: 40px;
+    margin-bottom: 49px;
+  }
+
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header-logo {
+    gap: 16px;
+  }
+
+  .header-logo span {
+    font-size: 18px;
+  }
+
+  .header-logo figure {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-logo figure img {
+    width: 29px;
+    height: 29px;
+  }
+
+  .dark-btn::before,
+  .dark-btn::after {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dark-btn {
+    gap: 8px;
+  }
+
+  .dark-btn > span span {
+    width: 12px;
+    height: 12px;
+  }
+}
