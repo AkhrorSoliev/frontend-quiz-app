@@ -11,7 +11,6 @@ function Navbar() {
   const handleThemeToggle = (e) => {
     e.preventDefault();
     const newTheme = theme === "dark-mode" ? "light" : "dark-mode";
-    console.log(newTheme);
     setTheme(newTheme);
   };
 

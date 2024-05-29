@@ -252,6 +252,52 @@ header input:checked + span span:first-child {
 
 /* HEADER FOOTER */
 
+/* HOME SECTION */
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.home-content h1 {
+  margin-bottom: 48px;
+  font-weight: 500;
+}
+
+.home-content h1 span:first-child {
+  font-weight: 300;
+  display: block;
+}
+
+.home-content p {
+  font-style: italic;
+  font-size: 20px;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 32px;
+  background: var(--prue-white-color);
+  box-shadow: 0px 16px 40px rgba(143, 160, 193, 0.14);
+  border-radius: 24px;
+}
+
+.menu-item span {
+  font-size: 28px;
+}
+
+.menu-link {
+  width: 100%;
+}
+
 /* RESPONSIVE PART */
 
 @media screen and (max-width: 768px) {
@@ -263,6 +309,19 @@ header input:checked + span span:first-child {
   .container {
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  .home-container {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .home-content h1 {
+    margin-bottom: 16px;
+  }
+
+  .menu-item {
+    padding: 12px;
   }
 }
 
@@ -285,6 +344,10 @@ header input:checked + span span:first-child {
     height: 29px;
   }
 
+  .home-content h1 {
+    font-size: 40px;
+  }
+
   .dark-btn::before,
   .dark-btn::after {
     width: 16px;
@@ -298,5 +361,9 @@ header input:checked + span span:first-child {
   .dark-btn > span span {
     width: 12px;
     height: 12px;
+  }
+
+  .menu-item {
+    border-radius: 12px;
   }
 }
