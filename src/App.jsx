@@ -19,7 +19,7 @@ function App() {
           element: <Home />,
         },
         {
-          path: "/quiz/:id",
+          path: "/quiz/:title",
           element: <Quiz />,
         },
       ],

@@ -14,7 +14,7 @@ function MenuLinks() {
             return (
               <Link
                 key={item.title}
-                href={`/quizzes/${item.title}`}
+                to={`/quiz/${item.title}`}
                 className="menu-item header-logo"
               >
                 <figure style={{ backgroundColor: item.color }}>

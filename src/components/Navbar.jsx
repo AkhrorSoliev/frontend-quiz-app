@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const toggleMode = () => {
   return localStorage.getItem("darkMode") || "light";
 };
 
 function Navbar() {
+  const { title } = useParams();
   const [theme, setTheme] = useState(() => toggleMode());
 
   const handleThemeToggle = (e) => {
@@ -23,12 +24,19 @@ function Navbar() {
   return (
     <header className="header">
       <div className="header-container container">
-        <Link className="header-logo" to="/">
-          <figure>
-            <img src="./assets/icon-html.svg" alt="icon" />
-          </figure>
-          <span>Accessibility</span>
-        </Link>
+        {title ? (
+          <Link className="header-logo" to="/">
+            <figure>
+              <img
+                src={`../assets/icon-${title.toLowerCase()}.svg`}
+                alt="icon"
+              />
+            </figure>
+            <span>{title}</span>
+          </Link>
+        ) : (
+          <span></span>
+        )}
 
         {/* NAVBAR TOGGLE */}
         <div>

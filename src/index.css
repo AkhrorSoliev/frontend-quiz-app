@@ -46,8 +46,8 @@
 
   --body-bg-image: url("./assets/pattern-background-desktop-light.svg");
 
-  --sun-icon: url("./assets/icon-moon-dark.svg");
-  --moon-icon: url("./assets/icon-sun-dark.svg");
+  --sun-icon: url("../assets/icon-moon-dark.svg");
+  --moon-icon: url("../assets/icon-sun-dark.svg");
 }
 
 .dark-mode {
