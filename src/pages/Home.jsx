@@ -1,4 +1,4 @@
-import MenuLinks from "./MenuLinks";
+import MenuLinks from "../components/MenuLinks";
 
 function Home() {
   return (

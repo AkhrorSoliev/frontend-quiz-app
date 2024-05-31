@@ -55,8 +55,8 @@
   --dark-naviy-color: #ffffff;
   --gray-navy-color: #abc1e1;
   --dark-navy-color: #ffffff;
-  --sun-icon: url("./assets/icon-moon-light.svg");
-  --moon-icon: url("./assets/icon-sun-light.svg");
+  --sun-icon: url("../assets/icon-moon-light.svg");
+  --moon-icon: url("../assets/icon-sun-light.svg");
   --body-bg-image: url("./assets/pattern-background-desktop-dark.svg");
   --prue-white-color: #3b4d66;
 }
@@ -298,6 +298,46 @@ header input:checked + span span:first-child {
   width: 100%;
 }
 
+/* QUIZ PART */
+.test-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.test-content {
+  width: 100%;
+  max-width: 465px;
+  min-height: 452px;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-description {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--gray-navy-color);
+  margin-bottom: 27px;
+}
+
+.test-title {
+  margin-bottom: auto;
+}
+
+.test-proccess-container {
+  width: 100%;
+  padding: 4px;
+  background-color: var(--prue-white-color);
+  border-radius: 999px;
+}
+
+.test-proccess {
+  height: 8px;
+  background-color: var(--purple-color);
+  border-radius: inherit;
+  transition: 0.3s;
+  width: 45%;
+}
+
 /* RESPONSIVE PART */
 
 @media screen and (max-width: 768px) {
@@ -322,6 +362,20 @@ header input:checked + span span:first-child {
 
   .menu-item {
     padding: 12px;
+  }
+
+  .test-container {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .test-content {
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .test-title {
+    margin-bottom: 40px;
   }
 }
 
@@ -365,5 +419,15 @@ header input:checked + span span:first-child {
 
   .menu-item {
     border-radius: 12px;
+  }
+
+  .test-description {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .test-title {
+    font-size: 20px;
+    margin-bottom: 24px;
   }
 }
