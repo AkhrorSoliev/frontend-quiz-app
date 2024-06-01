@@ -1,11 +1,45 @@
 import { useState } from "react";
 
+import Result from "../components/Result";
+
 function Test({ questions: { questions, title, color, icon } }) {
   const [answeredQuestions, setAnsweredQuestions] = useState(1);
+  const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
+
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answerStatus, setAnswerStatus] = useState(null);
   const [statusDisabeled, setStatusDisabled] = useState(false);
+  const [showNextButton, setShowNextButton] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const correctAnswer = questions[questionIndex].correctAnswer;
+
+    if (selectedAnswer === correctAnswer) {
+      setAnswerStatus("correct");
+      setCorrectAnswerCount(correctAnswerCount + 1);
+    } else {
+      setAnswerStatus("incorrect");
+    }
+
+    setShowNextButton(true);
+    setStatusDisabled(true);
+  };
+
+  const handleNextQuestion = () => {
+    setQuestionIndex(questionIndex + 1);
+    setAnsweredQuestions(answeredQuestions + 1);
+    setSelectedAnswer(null);
+    setShowNextButton(false);
+    setAnswerStatus(null);
+    setStatusDisabled(false);
+  };
+
+  if (questionIndex === questions.length) {
+    return <Result title={title} color={color} icon={icon} />;
+  }
 
   return (
     <div className="test-container">
@@ -25,7 +59,7 @@ function Test({ questions: { questions, title, color, icon } }) {
         </div>
       </div>
       <div className="test-questions">
-        <form>
+        <form onSubmit={handleSubmit}>
           <ul className="test-list">
             {questions[questionIndex].options.map((option, index) => {
               const alphabet = String.fromCharCode(index + 65);
@@ -73,7 +107,16 @@ function Test({ questions: { questions, title, color, icon } }) {
               );
             })}
           </ul>
-          <button className="btn test-btn">Submit</button>
+          {!showNextButton && (
+            <button className="btn test-btn">Submit Question</button>
+          )}
+          {showNextButton && (
+            <button onClick={handleNextQuestion} className="btn test-btn">
+              {questions.length == questionIndex + 1
+                ? "Finish"
+                : "Next Question"}
+            </button>
+          )}
         </form>
       </div>
     </div>
