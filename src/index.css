@@ -502,6 +502,16 @@ body.dark-mode .test-label:has(> input:checked) .test-letter {
   width: 100%;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 0;
+  a {
+    color: var(--dark-navy-color);
+  }
+}
+
 /* RESPONSIVE PART */
 
 @media screen and (max-width: 900px) {

@@ -1,3 +1,6 @@
+// toast
+import { toast } from "react-hot-toast";
+
 import { useState } from "react";
 
 import Result from "../components/Result";
@@ -6,7 +9,6 @@ function Test({ questions: { questions, title, color, icon } }) {
   const [answeredQuestions, setAnsweredQuestions] = useState(1);
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
-
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answerStatus, setAnswerStatus] = useState(null);
   const [statusDisabeled, setStatusDisabled] = useState(false);
@@ -14,18 +16,21 @@ function Test({ questions: { questions, title, color, icon } }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const correctAnswer = questions[questionIndex].answer;
 
-    const correctAnswer = questions[questionIndex].correctAnswer;
-
-    if (selectedAnswer === correctAnswer) {
-      setAnswerStatus("correct");
-      setCorrectAnswerCount(correctAnswerCount + 1);
+    if (selectedAnswer === null) {
+      return toast.error("Please select an answer");
     } else {
-      setAnswerStatus("incorrect");
-    }
+      if (selectedAnswer === correctAnswer) {
+        setAnswerStatus("correct");
+        setCorrectAnswerCount(correctAnswerCount + 1);
+      } else {
+        setAnswerStatus("incorrect");
+      }
 
-    setShowNextButton(true);
-    setStatusDisabled(true);
+      setShowNextButton(true);
+      setStatusDisabled(true);
+    }
   };
 
   const handleNextQuestion = () => {
@@ -38,7 +43,20 @@ function Test({ questions: { questions, title, color, icon } }) {
   };
 
   if (questionIndex === questions.length) {
-    return <Result title={title} color={color} icon={icon} />;
+    toast.success("Congratulations", {
+      icon: "🎉",
+    });
+    return (
+      <>
+        <Result
+          title={title}
+          color={color}
+          icon={icon}
+          correctAnswerCount={correctAnswerCount}
+          questionsLenght={questions.length}
+        />
+      </>
+    );
   }
 
   return (
