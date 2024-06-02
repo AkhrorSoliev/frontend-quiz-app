@@ -97,6 +97,21 @@ a {
   display: inline-block;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
 body {
   min-height: 100vh;
   font-family: var(--main-font-family);
