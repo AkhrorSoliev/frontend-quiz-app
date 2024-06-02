@@ -170,7 +170,6 @@ p {
   padding: 32px 0;
   font-size: 28px;
   line-height: 1;
-  transition: 0.3s;
   font-family: inherit;
   cursor: pointer;
   font-weight: 500;
@@ -366,7 +365,6 @@ header input:checked + span span:first-child {
   height: 8px;
   background-color: var(--purple-color);
   border-radius: inherit;
-  transition: 0.3s;
   width: 45%;
 }
 
@@ -386,7 +384,6 @@ header input:checked + span span:first-child {
   cursor: pointer;
   color: var(--dark-navy-color);
   font-size: 28px;
-  transition: 0.3s;
   border: 3px solid transparent;
 }
 
@@ -408,8 +405,6 @@ header input:checked + span span:first-child {
   background-color: var(--light-grey-color);
   width: 56px;
   height: 56px;
-  flex-shrink: 0;
-  transition: 0.3s;
 }
 
 body.dark-mode .test-letter {
