@@ -267,12 +267,12 @@ header input:checked + span span:first-child {
   gap: 20px;
 }
 
-.home-content h1 {
+.home-title {
   margin-bottom: 48px;
   font-weight: 500;
 }
 
-.home-content h1 span:first-child {
+.home-title span:first-child {
   font-weight: 300;
   display: block;
 }
@@ -494,6 +494,7 @@ body.dark-mode .test-label:has(> input:checked) .test-letter {
 
 .test-completed-body p {
   font-size: 24px;
+  color: var(--gray-navy-color);
 }
 
 .test-container .btn {
@@ -535,6 +536,10 @@ body.dark-mode .test-label:has(> input:checked) .test-letter {
   }
 
   .home-content h1 {
+    margin-bottom: 16px;
+  }
+
+  .result-container .home-title {
     margin-bottom: 16px;
   }
 
@@ -608,6 +613,10 @@ body.dark-mode .test-label:has(> input:checked) .test-letter {
     border-radius: 12px;
   }
 
+  .test-container {
+    gap: 40px;
+  }
+
   .test-description {
     font-size: 14px;
     margin-bottom: 12px;
@@ -632,7 +641,21 @@ body.dark-mode .test-label:has(> input:checked) .test-letter {
     border-radius: 12px;
   }
 
+  .test-completed-body {
+    padding: 32px;
+  }
+
   .test-completed-body .big-text {
-    font-size: 40px;
+    font-size: 88px;
+  }
+
+  .test-completed-body p {
+    font-size: 18px;
+  }
+
+  .test-completed .btn {
+    padding: 19px;
+    border-radius: 12px;
+    font-size: 18px;
   }
 }
