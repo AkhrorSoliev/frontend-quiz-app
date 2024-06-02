@@ -74,6 +74,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 *:focus {
@@ -105,7 +106,6 @@ body {
   background-size: cover;
   background-color: var(--light-grey-color);
   color: var(--dark-navy-color);
-  transition: 0.3s;
 }
 
 .big-text {
