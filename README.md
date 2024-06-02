@@ -10,6 +10,7 @@ This is a fun quiz app using the React library, a very useful project for beginn
 ## Authors
 
 - [@akhrorsoliev](https://www.github.com/akhrorsoliev)
+- [@yousufdev](https://github.com/Yusufdev1998)
 
 ## Appendix
 
