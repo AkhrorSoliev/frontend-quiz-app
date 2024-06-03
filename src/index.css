@@ -522,6 +522,20 @@ footer {
   }
 }
 
+.error-container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-weight: 300;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
 /* RESPONSIVE PART */
 
 @media screen and (max-width: 900px) {
@@ -656,7 +670,6 @@ footer {
   }
 
   .test-btn {
-    padding: 19px;
     font-size: 18px;
     border-radius: 12px;
   }
@@ -673,9 +686,13 @@ footer {
     font-size: 18px;
   }
 
-  .test-completed .btn {
+  .error-container {
+    font-size: 20px;
+  }
+
+  .btn {
     padding: 19px;
-    border-radius: 12px;
     font-size: 18px;
+    border-radius: 12px;
   }
 }

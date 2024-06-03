@@ -10,6 +10,7 @@ export function useFetch(url) {
       setIsPending(true);
       try {
         const req = await fetch(url);
+        console.log(req);
         if (!req.ok) {
           throw new Error(req.statusText);
         }

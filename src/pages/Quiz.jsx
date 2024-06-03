@@ -12,7 +12,7 @@ function Quiz() {
   const { title } = useParams();
   const {
     data: quizzes,
-    pending,
+    isPending,
     error,
   } = useFetch(
     `https://online-json-server-api.up.railway.app/project/66589e8316aab5687eae3b28/quizzes?title=${title}`
@@ -24,8 +24,8 @@ function Quiz() {
 
   return (
     <div className="quiz-container container">
-      {pending && <p>Loading...</p>}
-      {error && <p>Something went wrong</p>}
+      {isPending && <h3>Loading...</h3>}
+      {error && <h3>Something went wrong</h3>}
       {quizzes && <Test questions={quizzes.data[0]} />}
     </div>
   );

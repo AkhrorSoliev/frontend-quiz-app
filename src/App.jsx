@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // pages
 import Quiz from "./pages/Quiz";
 import Home from "./pages/Home";
+import ErrorPage from "./pages/ErrorPage";
 
 // layouts
 import MainLayout from "./layout/MainLayout";
@@ -13,6 +14,7 @@ function App() {
     {
       path: "/",
       element: <MainLayout />,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
